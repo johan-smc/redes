@@ -24,6 +24,9 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 while(1):
     letra = input("Escriba la letra\n");
+    if( ord(letra) < 32 or ord(letra) > 126 ):
+        print("Debes escribir un caracter ASCII entre 32 y 126.\n");
+        continue;
     frecuencia = float(input("Escriba la frecuencia\n"));
     # letra = 'F';
     # frecuencia = 0.125;
