@@ -8,10 +8,12 @@ from glumpy import app, gl, gloo, data, library
 from glumpy.geometry import primitives
 from glumpy.transforms import Trackball
 from mpl_toolkits.mplot3d import axes3d
+
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
+# from sympy import integrate, log
 
 #test with F and 0.125
 
@@ -21,8 +23,7 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 # from matplotlib import cm
 # from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
-
-
+# print (integrate(log(x), (x, 0, 1)));
 letra = input("Escriba la letra\n");
 if( ord(letra) < 32 or ord(letra) > 126 ):
     print("Debes escribir un caracter ASCII entre 32 y 126.\n");
@@ -55,8 +56,9 @@ sb = len(binary);
 def calcAn( n ):
   firstFactor = 1.0/(math.pi*n);
   # magic = 2.0*math.pi*n * frecuencia;
+  magic = 2.0*math.pi*n * (1/8);
 
-  magic = 2.0*math.pi*n;
+  # magic = 2.0*math.pi*n;
   tot = 0.0;
   for i in range(0,sb) :
     cosFirst = math.cos(magic*float(i));
@@ -68,7 +70,7 @@ def calcAn( n ):
 #calcula bn
 def calcBn( n ):
     firstFactor = 1.0/(math.pi*n);
-    magic = 2.0*math.pi*n * frecuencia;
+    magic = 2.0*math.pi*n * (1/8);
     tot = 0.0;
     for i in range(0,sb) :
         sinFirst = math.sin(magic*float(i));
@@ -94,7 +96,7 @@ def calc():
     for i in range(1,nTramas+1):
         # frecuencia=float(i/periodo);
         an = calcAn(i);
-        print (an);
+        # print (an);
         bn = calcBn(i);
         cn = calcCn( an , bn );
         teta = calcTeta( an , bn );
@@ -115,7 +117,7 @@ def calc():
         gn.append(dc+sumT );
         posj += 1;
 
-    print(g[1]);
+    # print(g[1]);
 
 calc();
 # print(gn);
