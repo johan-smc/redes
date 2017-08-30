@@ -125,7 +125,7 @@ plt.plot( tt , gn );
 plt.xlabel('t ', color='0')
 plt.ylabel('g(t)', color='0')  # grayscale color
 plt.show();
-plt.gcf().clear();
+# plt.gcf().clear();
 n= int (input("Ingrese 1 si quiere el diseño 1 o cualquier otro numero si quiere el diseño 2\n"));
 if n==1:
     #------------
